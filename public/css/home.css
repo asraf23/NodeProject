@@ -62,13 +62,13 @@ table{
     padding: 7px;
     color: white;
  }
- .edit a:hover{
-  background-color: rgb(13, 13, 88);
+ .edit:hover{
+  background-color: rgb(20, 20, 143);
  }
  .delete{
     background-color: red;
  }
- .delete a:hover{
+ .delete:hover{
   background-color: rgb(128, 64, 64)
  }
  .adduser{
@@ -84,6 +84,9 @@ table{
    margin-right: 10px;
    border: none;
    cursor: pointer;
+ }
+ .adduser:hover{
+  background-color: rgb(20, 20, 143);
  }
  
  .tophead{
