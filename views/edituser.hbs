@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edituser</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <div class="container display" id="display">
+        <div class="addusertext">Enter Employee Details</div>
+        {{#if msg}}
+        <div class="{{msg_type}}">{{msg}}</div>
+        {{/if}}
+       
+        <form action="/edituser/{{user.id}}" method="post">
+        <div class="data">
+        <label for="name">Employee Name</label>
+        <input type="text" name="employee_name" id="name" value="{{user.employee_name}}" required>
+        </div>
+        <div class="data">
+        <label for="employeenumber">Employee Number</label>
+        <input type="text" name="employee_number" id="employeenumber" value="{{user.employee_number}}" required>
+        </div>
+        <div class="data">
+        <label for="DOJ">DOJ</label>
+        <input type="text" name="doj" id="doj" value="{{user.doj}}">
+        </div>
+        <div class="data">
+        <label for="Department">Department</label>
+        <input type="text" name="department" id="Department" value="{{user.department}}">
+        </div>
+        <div class="data">
+        <label for="Designation">Designation</label>
+        <input type="text" name="designation" id="Designation" value="{{user.designation}}">
+        </div>
+        <div class="data">
+        <label for="Branch">Branch</label>
+        <input type="text" name="branch" id="Branch" value="{{user.branch}}">
+        </div>
+        <div class="data">
+        <label for="Salary">Salary</label>
+        <input type="text" name="salary" id="Salary" value="{{user.salary}}">
+        </div>
+        <div class="login_btn">
+          <button id="save" type="submit">Save</button>
+        </div>
+        </form>
+        
+        </div>
+</body>
+</html>

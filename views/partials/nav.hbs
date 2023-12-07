@@ -1,0 +1,14 @@
+
+<header>
+  <h1>Employee Records</h1>
+  <ul>
+    {{#if user}}
+    <li><a href="/home">Home</a></li>
+    <li><a href="/profile">Proile</a></li>
+    <li><a href="/auth/logout">Logout</a></li>
+    {{else}}
+    <li><a href="/register">Register</a></li>
+    <li><a href="/login">Login</a></li>
+    {{/if}}
+  </ul>
+</header>

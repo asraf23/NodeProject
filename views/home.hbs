@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="/css/home.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div>
+            {{>nav}}
+        </div>
+        <div>
+            <div class="tophead">
+                <h1 class="heading"></h1>
+                <button class="adduser" id="adduser" onclick="addUser()">Add user</button>
+            </div>
+                      {{#if msg}}
+                      <div class="{{msg_type}}" id="message">{{msg}}</div>
+                      {{/if}}     
+                <table>
+                    <thead>
+                        <td>SL No</td>
+                        <td>Employee Name</td>
+                        <td>Employee Number</td>
+                        <td>DOJ</td>
+                        <td>Department</td>
+                        <td>Designation</td>
+                        <td>Branch</td>
+                        <td>Salary</td>
+                        <td>Edit</td>
+                        <td>Delete</td>
+                    </thead>
+                    <tbody>
+                        {{#each result}}
+                        <tr class="tr">
+                        <td class="slno"></td>
+                        <td>{{this.employee_name}}</td>
+                        <td>{{this.employee_number}}</td>
+                        <td>{{this.doj}}</td>
+                        <td>{{this.department}}</td>
+                        <td>{{this.designation}}</td>
+                        <td>{{this.branch}}</td>
+                        <td>{{this.salary}}</td>
+                        <td><a class="edit" href="/edituser/{{this.id}}">Edit</a></td>
+                        <td><a class="delete" onclick="return confirm('are u sure to delete Employee?')" href="/delete/{{this.id}}">Delete</a></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                   
+                </table>
+        </div>
+    </div>
+    <div class="container display" id="display" style="display: none;">
+        <div class="addusertext">Enter Employee Details</div>
+       
+        <form action="/home" method="post">
+        <div class="data">
+        <label for="name">Employee Name</label>
+        <input type="text" name="employee_name" id="name" required>
+        </div>
+        <div class="data">
+        <label for="employeenumber">Employee Number</label>
+        <input type="text" name="employee_number" id="employeenumber" required>
+        </div>
+        <div class="data">
+        <label for="DOJ">DOJ</label>
+        <input type="text" name="doj" id="doj">
+        </div>
+        <div class="data">
+        <label for="Department">Department</label>
+        <input type="text" name="department" id="Department">
+        </div>
+        <div class="data">
+        <label for="Designation">Designation</label>
+        <input type="text" name="designation" id="Designation">
+        </div>
+        <div class="data">
+        <label for="Branch">Branch</label>
+        <input type="text" name="branch" id="Branch">
+        </div>
+        <div class="data">
+        <label for="Salary">Salary</label>
+        <input type="text" name="salary" id="Salary">
+        </div>
+        <div class="login_btn">
+          <button id="save" type="submit">Save</button>
+        </div>
+        </form>
+        </div>
+
+       <script>
+        const trElements = document.getElementsByClassName('tr');
+        
+    for (let i = 0; i<trElements.length; i++) {
+        const slno = trElements[i].getElementsByClassName('slno')[0];
+        slno.innerHTML = i + 1;
+    }
+
+
+    function addUser() {
+        let addUserElement = document.getElementById('display');
+        console.log(addUserElement.style.display);
+
+        if (addUserElement.style.display === "none") {
+            addUserElement.style.display = "block";
+        } else {
+            addUserElement.style.display = "none";
+        }
+    }
+
+    
+            setTimeout(function() {
+                document.getElementById('message').style.display = 'none';
+            }, 3000); // Hide the message after 5 seconds (5000 milliseconds)
+
+           
+
+    
+</script>
+</body>
+</html>

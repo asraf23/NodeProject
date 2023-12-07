@@ -1,0 +1,89 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+body{
+  height: 100vh;
+  width: 100%;
+  background: rgb(82, 200, 221);
+}
+.container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: aliceblue;
+  padding: 20px;
+  display: block;
+  box-shadow: 0px 40px 368px -3px;
+}
+.text{
+  font-weight: bold;
+  text-align: center;
+  color: aqua;
+  letter-spacing: 1px;
+  font-size: 30px;
+}
+
+form input{
+  width: 100%;
+  margin-top: 2px;
+  height: 30px;
+  border: 1px solid silver;
+  padding-left: 10px;
+}
+form input:focus{
+  border-color: aqua;
+  border-bottom: 2px solid aqua;
+}
+.data{
+  margin-top: 10px;
+  height: 50px;
+}
+form a{
+  text-decoration: none;
+  color: black;
+  color: aqua;
+}
+.forget_pass{
+  margin-top: 5px;
+}
+.login_btn button{
+  width: 100%;
+  background-color: aqua;
+  height: 30px;
+  margin-top: 20px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  
+}
+.register{
+  text-align: center;
+  margin-top: 10px;
+}
+.save{
+  width: 100%;
+  background-color: aqua;
+  height: 30px;
+  margin-top: 20px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.error{
+  text-align: center;
+  color: red;
+  padding: 10px;
+}
+.success{
+  text-align: center;
+  color: green;
+  padding: 10px;
+}

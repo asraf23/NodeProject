@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+  {{>nav}}
+  <div class="container">
+    <div class="text" >Login</div>
+     {{#if msg}}
+    <h4 class="{{msg_type}}">{{msg}}</h4>
+    {{/if}}
+      <form action="/auth/login" method="post">
+        <div class="data">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text">
+        </div>
+        <div class="data">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password">
+        </div>
+        <div class="forget_pass">
+          <a href="#">Forget Password?</a>
+        </div>
+        <div class="login_btn">
+          <button id="login" type="submit">Login</button>
+        </div>
+        <div class="register">
+          New user <a href="/register">Register</a>
+        </div>
+      </form>
+  </div>
+  
+</body>
+</html>
