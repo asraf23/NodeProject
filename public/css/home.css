@@ -62,8 +62,14 @@ table{
     padding: 7px;
     color: white;
  }
+ .edit a:hover{
+  background-color: rgb(13, 13, 88);
+ }
  .delete{
     background-color: red;
+ }
+ .delete a:hover{
+  background-color: rgb(128, 64, 64)
  }
  .adduser{
    text-decoration: none;
@@ -79,6 +85,7 @@ table{
    border: none;
    cursor: pointer;
  }
+ 
  .tophead{
     display: flex;
     justify-content: space-between;

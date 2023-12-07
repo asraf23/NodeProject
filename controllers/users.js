@@ -146,13 +146,13 @@ exports.adduser = async (req, res) => {
     branch,
     salary,
   } = req.body;
-  console.log(employee_number);
+  // console.log(employee_number);
   await db.query(
     "select * from emp_details where employee_number=?",
     [employee_number],
     (err, result) => {
       if (result.length !== 0) {
-        console.log(result);
+        // console.log(result);
         res.redirect("/home?msg=Employee+already+exist&msg_type=error");
       } else {
         db.query(
