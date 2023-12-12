@@ -14,13 +14,70 @@
         </div>
         <div>
             <div class="main">
-                <div class="Pf-main">
-                    <div class="img"></div>
-                    <div class="details"></div>
+                <div class="pf-main">
+                    <div class="img">
+                        <input type="image" id="preview" src="/images/pf.jpg" alt="Submit" width="100px" height="100px" style="border-radius: 50%; ;">
+                    </div>
+                    <div class="details">
+                        
+                        <div>
+                        <p>Username</p>
+                        <p>Designation</p>
+                        </div>
+                        <div>
+                             <p>{{user.name}}</p>
+                        <p>Designation</p>
+                        </div>
+                        
+                    </div>
                 </div>
-                <div class="pf-sub"></div>
+                <div class="pf-sub">
+                    <form action="/profile" method="post">
+                    <div class="data">
+                    <label for="profile-pic">Profile Picture</label>
+                    <input type="file" id="profile-pic" name="profile-pic" accept="image/*" onchange="previewImage()">
+                    </div>
+                    <div class="data">
+                    <label for="username">User Name</label>
+                    <input type="text" name="username">
+                    </div>
+                    <div class="data">
+                        <label for="designation">Designation</label>
+                        <input type="text" name="designation">
+                    </div>
+                    <div class="data">
+                        <label for="Phone">Phone</label>
+                        <input type="text" name="phone">
+                    </div>
+                    <div class="data">
+                        <label for="email">email</label>
+                        <input type="text" name="email">
+                    </div>
+                    <div class="data"> 
+                        <label for="address">address</label>
+                        <input type="text" name="adresss">
+                    </div>
+                    </form>
+                    <div>
+                        <button>Save</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <script>
+    function previewImage() {
+        var input = document.getElementById('profile-pic');
+        var preview = document.getElementById('preview');
+        
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            preview.src = e.target.result;
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+</script>
 </body>
 </html>
